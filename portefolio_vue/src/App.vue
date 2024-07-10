@@ -1,21 +1,25 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 import ContentPreview from './components/ContentPreview.vue'
+import HeaderComp from './components/HeaderComp.vue'
 </script>
 
 <template>
-  <div class="bg-color"></div>
-  <div class="grid"></div>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <v-app style="background-color: transparent;">
+    <div class="bg-color"></div>
+    <div class="grid"></div>
+    <header>
+      <HeaderComp/>
+    </header>
+      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
+      <div class="wrapper">
+        <HelloWorld msg="You did it!" />
+      </div>
+    
 
-  <ContentPreview />
+    <ContentPreview />
+  </v-app>
 </template>
 
 <style scoped>

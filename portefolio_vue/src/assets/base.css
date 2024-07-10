@@ -106,13 +106,8 @@ body {
   background-repeat: repeat;
 }
 
-.grid::after {
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px),
-                    linear-gradient(0deg, rgba(255, 255, 255, 0.3) 1px, transparent 1px);
-}
-
 .bg-color{
-  background: var(--color-background);
+  background: var(--v-custom-gradient);
   position: fixed;
   width: 100%;
   height: 100vh;
