@@ -17,6 +17,7 @@
     "vuetify": "^3.6.11"
   },
   "devDependencies": {
+    "@mdi/js": "^7.4.47",
     "@rushstack/eslint-patch": "^1.8.0",
     "@tsconfig/node20": "^20.1.4",
     "@types/node": "^20.14.5",
