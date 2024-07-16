@@ -1,24 +1,33 @@
 <template>
-    <div class="main-div rounded-xl">
-        <div class="sub-div"></div>
-    </div>
+  <v-card flat class="rounded-xl border-lg bg-surface-variant main-card">
+    <v-card-title class="bg-surface-variant-light" height="2.5rem">
+      <div class="d-flex justify-end align-center">
+        <div v-for="n in 3" :key="n" class="circle bg-surface-variant"></div>
+      </div>
+    </v-card-title>
+
+    <v-card-text class="pt-4">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione
+      debitis quis est labore voluptatibus! Eaque cupiditate minima, at placeat
+      totam, magni doloremque veniam neque porro libero rerum unde voluptatem!
+    </v-card-text>
+  </v-card>
 </template>
 
 <style scoped>
-.main-div{
-    overflow: hidden;
-    background-color: #c3c5fe;
-    border: 3px solid #ffffff;
+  .circle {
+    margin: 5px 2px; /*à transfo en langage du framework*/
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-radius: 50%;
+  }
+
+  .main-card{
     min-height: 100px;
     min-width: 100px;
     height: 75vh;
     width: 55%;
     margin-left: 40%;
-}
-
-.sub-div{
-    background-color: #f4e0f1;
-    min-height: 2.5rem;
-}
-
+  }
 </style>

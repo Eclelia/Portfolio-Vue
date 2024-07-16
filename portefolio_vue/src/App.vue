@@ -1,7 +1,7 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import ContentPreview from './components/ContentPreview.vue'
-import HeaderComp from './components/HeaderComp.vue'
+<script setup>
+import HelloWorld from './components/HelloWorld.vue';
+import ContentPreview from './components/ContentPreview.vue';
+import HeaderComp from './components/HeaderComp.vue';
 </script>
 
 <template>
