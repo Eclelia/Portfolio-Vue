@@ -27,7 +27,6 @@
     min-height: 100px;
     min-width: 100px;
     height: 75vh;
-    width: 55%;
-    margin-left: 40%;
+    margin-left: -30%;
   }
 </style>

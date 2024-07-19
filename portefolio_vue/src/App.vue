@@ -1,5 +1,4 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
 import ContentPreview from './components/ContentPreview.vue';
 import HeaderComp from './components/HeaderComp.vue';
 </script>
@@ -11,14 +10,20 @@ import HeaderComp from './components/HeaderComp.vue';
     <header>
       <HeaderComp/>
     </header>
-      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-      <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-      </div>
-    
-
-    <ContentPreview />
+    <v-container fluid style="margin-top: 5%; max-width: 90vw;">
+      <v-row>
+        <v-col cols="5" offset="1" class="title">
+          <h1 class = "text-h1 text-break">Célia <br>Dennetiere</h1>
+          <v-col cols="9">
+            <p class="subtitle">Repente adfatim consilio consilio quaeos post mirterur pagos commutatos labores ad pagos minterur.</p>
+            <v-btn color="secondary" class="about-me-btn">About Me</v-btn>
+          </v-col>
+        </v-col>
+        <v-col cols="5">
+          <ContentPreview />
+        </v-col>
+      </v-row>    
+    </v-container>
   </v-app>
 </template>
 
@@ -28,9 +33,9 @@ header {
   line-height: 1.5;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.title{
+   z-index : 100;
+   margin-top: 7%;
 }
 
 @media (min-width: 1024px) {
@@ -40,9 +45,6 @@ header {
     padding-right: calc(var(--section-gap) / 2);
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
 
   header .wrapper {
     display: flex;
