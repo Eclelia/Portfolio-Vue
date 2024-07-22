@@ -1,7 +1,7 @@
 <script setup>
 import ContentPreview from './components/ContentPreview.vue';
 import HeaderComp from './components/HeaderComp.vue';
-import PageTitle from './components/PageTitle.vue';
+import ContentTitle from './components/ContentTitle.vue';
 </script>
 
 <template>
@@ -26,7 +26,7 @@ import PageTitle from './components/PageTitle.vue';
 
         <v-row class="snap-section" align="center">
           <v-col cols="5" offset="1" class="title">
-            <PageTitle />
+            <ContentTitle :title ="'Test'" :subtitle="'Subtitle test'"/>
           </v-col>
           <v-col cols="5">
             <ContentPreview />
