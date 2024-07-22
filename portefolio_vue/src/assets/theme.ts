@@ -6,6 +6,7 @@ export const customDarkTheme = {
     colors : {
         background : '#080239',
         surface : '#080239',
+        secondary : "#fa3968",
         'surface-variant' : '#c3c5fe', 
         'surface-variant-light' : '#f4e0f1',
         'on-surface-variant' : "#ffffff",
@@ -23,6 +24,9 @@ export const customLightTheme = {
     colors : {
         background : '#ace0f9',
         surface : '#ace0f9',
+        secondary : "#fa3968",
+        'on-background' : "#0a3055",
+        'on-surface' : "#0a3055",
         'surface-variant' : '#c3c5fe', 
         'surface-variant-light' : '#f4e0f1',
         'on-surface-variant' : "#ffffff",

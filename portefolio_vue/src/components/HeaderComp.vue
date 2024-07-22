@@ -12,7 +12,6 @@ const toggleTheme = () => {
 </script>
 
 <template>
-    <v-container>
       <v-app-bar :elevation="0">
         <template v-slot:append>
           <v-switch
@@ -28,7 +27,5 @@ const toggleTheme = () => {
         </template>
 
         <v-app-bar-title>Célia Dennetiere</v-app-bar-title>
-        
       </v-app-bar>
-    </v-container>
 </template>
