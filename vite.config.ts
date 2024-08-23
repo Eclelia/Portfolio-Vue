@@ -8,6 +8,7 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  base: "https://eclelia.github.io/Portfolio-Vue/",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
