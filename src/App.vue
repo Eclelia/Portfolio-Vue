@@ -32,6 +32,9 @@ import ContentTitle from './components/ContentTitle.vue';
             <ContentPreview />
           </v-col>
         </v-row> 
+
+        <v-row class="snap-section" align="center">
+        </v-row> 
       </v-container>
     </main>
   </v-app>

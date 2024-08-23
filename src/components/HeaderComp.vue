@@ -17,20 +17,22 @@ const menu = ref(null);
 const idleTimeline = ref(null);
 
 function onDrawerMounted() {
-  console.log(document.querySelector("#clipPath"));
+  console.log(document.querySelector("#waveClip"));
   if (drawer) {
     openMenu();
     startIdleAnimation();
   }
 
-  TweenLite.defaultEase = Sine.easeInOut;
-  TweenLite.set("g", { y: window.innerHeight / 2 });
+  gsap.defaults({
+    ease: "sine.inOut",
+  })
+  gsap.set("g", { y: window.innerHeight / 2 });
 
   var svg = document.querySelector(".test");
   var wave = document.querySelector("#wave");
   var width = 800;
 
-  var amplitude = 200;
+  var amplitude = 100;
   var frequency = 2;
   var segments = 200;
   var interval = width / segments;
@@ -43,7 +45,7 @@ function onDrawerMounted() {
     point.x = i * interval;
     point.y = amplitude / 2;
 
-    TweenMax.to(point, 2, { y: -point.y, repeat: -1, yoyo: true }).progress(norm * frequency);
+    gsap.to(point, { duration: 2, y: -point.y, repeat: -1, yoyo: true }).progress(norm * frequency);
   }
 }
 
@@ -109,18 +111,14 @@ onUnmounted(() => {
       <!-- Ajoutez plus d'éléments ici -->
     </v-list>
   </v-navigation-drawer>
-  <svg>
-    <defs>
-      <clipPath id="clipPath">
-        <circle cx="100" cy="100" r="500" fill="blue" />
-      </clipPath>
-    </defs>
-  </svg>
 
-  <svg class="test">
+  <svg>
     <g>
       <line id="line" x1="0" x2="100%" />
-      <polyline id="wave" />
+      <clipPath id="waveClip">
+        <polyline id="wave" />
+        <!-- <circle cx="100" cy="100" r="500" fill="blue" /> -->
+      </clipPath>
     </g>
   </svg>
 
@@ -128,19 +126,13 @@ onUnmounted(() => {
 
 <style scoped>
 .v-navigation-drawer {
-  /*clip-path: url("#clipPath");*/
+  clip-path: url("#waveClip");
 }
 
-svg{
+svg {
   position: absolute;
   right: 0;
   top: 0;
-}
-
-.test {
-  width: 800px;
-  height: 100%;
-  padding: 50px;
 }
 
 line {
@@ -154,5 +146,6 @@ line {
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke: #56acf4;
+  transform: rotate(90deg);
 }
 </style>
