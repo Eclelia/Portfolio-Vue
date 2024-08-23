@@ -13,7 +13,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@mojs/core": "^1.7.1",
+    "@mojs/core": "^1.5.1",
     "gsap": "^3.12.5",
     "vue": "^3.4.29",
     "vuetify": "^3.6.11"
