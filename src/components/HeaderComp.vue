@@ -22,6 +22,29 @@ function onDrawerMounted() {
     openMenu();
     startIdleAnimation();
   }
+
+  TweenLite.defaultEase = Sine.easeInOut;
+  TweenLite.set("g", { y: window.innerHeight / 2 });
+
+  var svg = document.querySelector(".test");
+  var wave = document.querySelector("#wave");
+  var width = 800;
+
+  var amplitude = 200;
+  var frequency = 2;
+  var segments = 200;
+  var interval = width / segments;
+
+  for (var i = 0; i < segments; i++) {
+
+    var norm = i / (segments - 1);
+    var point = wave.points.appendItem(svg.createSVGPoint());
+
+    point.x = i * interval;
+    point.y = amplitude / 2;
+
+    TweenMax.to(point, 2, { y: -point.y, repeat: -1, yoyo: true }).progress(norm * frequency);
+  }
 }
 
 
@@ -75,7 +98,7 @@ onUnmounted(() => {
     <v-app-bar-title>Célia Dennetiere</v-app-bar-title>
   </v-app-bar>
 
-  <v-navigation-drawer temporary v-model="drawer"  ref="menu" :width="500" location="end" @vue:mounted="onDrawerMounted">
+  <v-navigation-drawer temporary v-model="drawer" ref="menu" :width="500" location="end" @vue:mounted="onDrawerMounted">
     <v-list>
       <v-list-item link>
         <v-list-item-action>
@@ -86,17 +109,50 @@ onUnmounted(() => {
       <!-- Ajoutez plus d'éléments ici -->
     </v-list>
   </v-navigation-drawer>
-  <svg style="position:absolute; right:0; top:0;">
+  <svg>
     <defs>
       <clipPath id="clipPath">
         <circle cx="100" cy="100" r="500" fill="blue" />
       </clipPath>
     </defs>
   </svg>
+
+  <svg class="test">
+    <g>
+      <line id="line" x1="0" x2="100%" />
+      <polyline id="wave" />
+    </g>
+  </svg>
+
 </template>
 
 <style scoped>
 .v-navigation-drawer {
-  clip-path: url("#clipPath");
+  /*clip-path: url("#clipPath");*/
+}
+
+svg{
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.test {
+  width: 800px;
+  height: 100%;
+  padding: 50px;
+}
+
+line {
+  stroke-width: 1;
+  stroke: #3c3c3c;
+}
+
+#wave {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #56acf4;
 }
 </style>
